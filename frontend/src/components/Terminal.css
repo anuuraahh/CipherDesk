@@ -1,0 +1,139 @@
+.terminal {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.terminal-prompt-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--ink-panel);
+  border: 1px solid #2A2F36;
+  border-radius: 6px;
+  padding: 14px 18px;
+}
+
+.prompt-arrow {
+  color: var(--signal-amber);
+  font-weight: 700;
+}
+
+.prompt-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #E8E6E0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+}
+
+.prompt-input::placeholder {
+  color: #5A5F66;
+}
+
+.run-button {
+  background: var(--signal-amber-dim);
+  color: var(--signal-amber);
+  border: 1px solid var(--signal-amber);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.run-button:hover:not(:disabled) {
+  background: var(--signal-amber);
+  color: var(--ink-black);
+}
+
+.run-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pipeline-row {
+  position: relative;
+  margin: 48px 0 32px;
+}
+
+.pipeline-track {
+  position: absolute;
+  top: 7px;
+  left: 7%;
+  right: 7%;
+  height: 2px;
+  background: #2A2F36;
+}
+
+.pipeline-track-fill {
+  height: 100%;
+  background: var(--signal-amber);
+  transition: width 0.4s ease;
+}
+
+.pipeline-nodes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+
+.pipeline-node-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pipeline-node {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3A3F45;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.node-active {
+  background: var(--signal-amber);
+  box-shadow: 0 0 12px 3px rgba(245, 166, 35, 0.6);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.node-done {
+  background: var(--signal-amber);
+  box-shadow: none;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 12px 3px rgba(245, 166, 35, 0.6); }
+  50% { box-shadow: 0 0 20px 6px rgba(245, 166, 35, 0.9); }
+}
+
+.pipeline-label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7A7F86;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.pipeline-node-col:has(.node-active) .pipeline-label,
+.pipeline-node-col:has(.node-done) .pipeline-label {
+  color: var(--signal-amber);
+}
+
+.terminal-log {
+  font-size: 12px;
+  color: #7A7F86;
+  min-height: 16px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.log-error {
+  color: var(--tick-red);
+}

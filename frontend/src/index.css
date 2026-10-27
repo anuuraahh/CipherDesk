@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0B0D10;
+  color: #E8E6E0;
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: hidden;
+}
+
+:root {
+  --ink-black: #0B0D10;
+  --ink-panel: #14181D;
+  --signal-amber: #F5A623;
+  --signal-amber-dim: #6B4A1E;
+  --paper-cream: #F2ECDD;
+  --paper-line: #D8CFB8;
+  --ink-stamp: #1C1B19;
+  --tick-green: #5B8C5A;
+  --tick-red: #B5533F;
+}

@@ -1,0 +1,51 @@
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--ink-black);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(245, 166, 35, 0.03) 0px,
+    rgba(245, 166, 35, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  animation: flicker 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+}
+
+.boot-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  color: var(--signal-amber);
+  text-align: left;
+}
+
+.boot-line {
+  margin-bottom: 6px;
+}
+
+.boot-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
